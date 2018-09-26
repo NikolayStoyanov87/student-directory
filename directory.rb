@@ -1,19 +1,5 @@
-#lets put all students into an array.
-students = [
-  {name: "Dr. Hanibal Lecter", cohort: :november},
-  {name: "Darth Vader", cohort: :november},
-  {name: "Nurse Ratched", cohort: :november},
-  {name: "Michael Curlione", cohort: :november},
-  {name: "Alex Delaege", cohort: :november},
-  {name: "The Wicked Witch of the West", cohort: :november},
-  {name: "Terminator", cohort: :november},
-  {name: "Freddy Krueger", cohort: :november},
-  {name: "The Joker", cohort: :november},
-  {name: "Joffrey Baratheon", cohort: :november},
-  {name: "Norman Bates", cohort: :november}
-]
 def print_header
-  puts "The students of Villains academy"
+  puts "The students of Villains Academy"
   puts "--------------------------------"
 end
 def print(students)
@@ -21,10 +7,28 @@ def print(students)
     puts "#{student[:name]} (#{student[:cohort]} cohort)"
   end
 end
+def input_students
+  puts "Please enter the name of the students"
+  puts "To finish just hit return twice"
+  #create an ampty array.
+  students = []
+  #get the first name.
+  name = gets.chomp
+  #while the name is not empty repeate this code.
+  while !name.empty? do
+    #add the student hash into an array.
+    students << {name: name, cohort: :november}
+    puts "Now we have #{students.count} students"
+    #get another name from the user
+    name = gets.chomp
+  end
+  #return the array of students
+  students
+end
 def print_footer(students)
   puts "Overaall, we have #{students.count} great students"
 end
-#nothing happens untill we call the methods.
+students = input_students
 print_header
 print(students)
 print_footer(students)
