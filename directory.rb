@@ -11,7 +11,5 @@ students = [
     "Joffrey Baratheon",
     "Norman Bates"
 ]
-def select_elements_starting_with(students,letter)
-  students.select { |str| str.start_with?(letter) }
+students.each do |student| puts "#{student}" if student.length <=12
 end
-puts select_elements_starting_with(students, "A")
