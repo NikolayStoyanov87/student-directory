@@ -11,5 +11,7 @@ students = [
     "Joffrey Baratheon",
     "Norman Bates"
 ]
-students.each do |student| puts "#{student}" if student.length <=12
+while students.length != 0 do
+ puts students
+break
 end
