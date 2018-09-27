@@ -11,4 +11,7 @@ students = [
     "Joffrey Baratheon",
     "Norman Bates"
 ]
-students.each_with_index{|value, index| puts "#{index + 1}. #{value}."}
+def select_elements_starting_with(students,letter)
+  students.select { |str| str.start_with?(letter) }
+end
+puts select_elements_starting_with(students, "A")
