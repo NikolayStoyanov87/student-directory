@@ -3,8 +3,10 @@ def print_header
   puts "--------------------------------".center(80)
 end
 def print(students)
-  students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)".center(80)
+  categorised = students.group_by { |person| person[:cohort] }
+  categorised.each do |cohort_type, members|
+  puts cohort_type
+  members.each { |member| puts member[:name] }
   end
 end
 def input_students
