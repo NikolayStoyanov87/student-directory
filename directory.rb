@@ -45,12 +45,14 @@ def input_students
     # get another name from the user
     name = STDIN.gets.chomp
   end
+puts "ok Im working fine"
 end
 
 def show_students
   print_header
   print_student_list
   print_footer
+  puts "ok Im working fine"
 end
 
 def print_header
@@ -78,6 +80,7 @@ def save_students
     file.puts csv_line
   end
   file.close
+  puts "ok Im working fine"
 end
 
 def load_students(filename = "students.csv")
@@ -87,6 +90,7 @@ def load_students(filename = "students.csv")
     insert_student(name, cohort)
   end
   file.close
+  puts "ok Im working fine"
 end
 
 def insert_student(name, cohort)
