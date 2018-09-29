@@ -29,7 +29,11 @@ def input_students
   while !name.empty? do
     #add the student hash into an array.
     students << {name: name, cohort: cohort.to_sym}
-    puts "Now we have #{students.count} students".center(80)
+    if students.length > 1
+      puts "Now we have #{students.count} students".center(80)
+    else
+      puts "Now we have #{students.count} student".center(80)
+    end
     #get another name from the user
     name = gets.chomp
     cohort = gets.chomp
@@ -38,7 +42,11 @@ def input_students
   students
 end
 def print_footer(students)
-  puts "Overall, we have #{students.count} great students".center(80)
+  if students.length > 1
+    puts "Overall, we have #{students.count} great students".center(80)
+  else
+    puts "Overall, we have #{students.count} great student".center(80)
+  end
 end
 students = input_students
 print_header
